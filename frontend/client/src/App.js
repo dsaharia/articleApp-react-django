@@ -2,15 +2,20 @@ import React from 'react';
 import './App.css';
 import 'antd/dist/antd.css'; // or 'antd/dist/antd.less'
 import CustomLayout from './components/containers/Layout';
+import ArticleList from './components/containers/ArticleList';
+import BaseRouter from './routes';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 function App() {
-  return (
-    <div className="App">
-      <CustomLayout>
-      
-      </CustomLayout>
+    return (
+        <div className="App">
+        <Router>
+          <CustomLayout>
+            <BaseRouter />
+          </CustomLayout>
+        </Router>
     </div>
-  );
+    );
 }
 
 export default App;
