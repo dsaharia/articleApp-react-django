@@ -2,6 +2,7 @@ import React from 'react';
 import Articles from '../Articles';
 import axios from 'axios';
 import { Card } from 'antd';
+import CustomForm from '../Form';
 
 export default class ArticleList extends React.Component {
     state = {
@@ -18,9 +19,12 @@ export default class ArticleList extends React.Component {
     }
     render() {
         return(
+            <div>
                 <Card title={this.state.article.title}>
                     <p>{this.state.article.content}</p>
                 </Card>
+                <CustomForm requestType="PUT" articleID={this.props.match.params.articleID}/>
+            </div>
             )
     }
 }

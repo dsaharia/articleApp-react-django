@@ -1,7 +1,7 @@
 import React from 'react';
 import Articles from '../Articles';
 import axios from 'axios';
-
+import CustomForm from '../Form';  
 
 export default class ArticleList extends React.Component {
     state = {
@@ -17,7 +17,12 @@ export default class ArticleList extends React.Component {
     }
     render() {
         return(
+            <div>
                 <Articles data={this.state.articles}/>
+                <br/>
+                <h2>Create an article</h2>
+                <CustomForm requestType="POST" articleID={null}/>
+            </div>
             )
     }
 }
